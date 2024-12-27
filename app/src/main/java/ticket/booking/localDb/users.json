@@ -1,0 +1,59 @@
+[{
+  "name": "Alice Smith",
+  "hashedPassword": "5f4dcc3b5aa765d61d8327deb882cf99",
+  "userid": "user123",
+  "ticketBooked": [
+    {
+      "ticketId": "T12345",
+      "customerId": "user123",
+      "customerName": "Alice Smith",
+      "source": "New York",
+      "destination": "Washington DC",
+      "price": 150,
+      "train": {
+        "trainID": "TR001",
+        "trainNo": "A123",
+        "seats": [
+          [1, 0, 1],
+          [1, 1, 0]
+        ],
+        "stationTimes": {
+          "New York": "09:00:00",
+          "Washington DC": "12:00:00"
+        },
+        "stations": ["New York", "Philadelphia", "Washington DC"]
+      },
+      "dateOfTravel": "2024-12-30"
+    }
+  ]
+},
+  {
+    "name": "Bob Johnson",
+    "hashedPassword": "7c6a180b36896a0a8c02787eeafb0e4c",
+    "userid": "user456",
+    "ticketBooked": [
+      {
+        "ticketId": "T67890",
+        "customerId": "user456",
+        "customerName": "Bob Johnson",
+        "source": "Los Angeles",
+        "destination": "San Francisco",
+        "price": 120,
+        "train": {
+          "trainID": "TR002",
+          "trainNo": "B456",
+          "seats": [
+            [0, 1, 1],
+            [1, 0, 1]
+          ],
+          "stationTimes": {
+            "Los Angeles": "10:00:00",
+            "San Francisco": "14:00:00"
+          },
+          "stations": ["Los Angeles", "Santa Barbara", "San Francisco"]
+        },
+        "dateOfTravel": "2024-12-31"
+      }
+    ]
+  }
+]
