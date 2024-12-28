@@ -1,7 +1,9 @@
 package ticket.booking.entities;
 
 import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Ticket {
     private String ticketId;
     private String userID;
@@ -23,7 +25,7 @@ public class Ticket {
         this.train = train;
         this.dateOfTravel = dateOfTravel;
     }
-
+    public Ticket() {}
     // Getters and Setters
     public String getTicketId() {
         return ticketId;

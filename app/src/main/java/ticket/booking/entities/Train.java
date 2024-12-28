@@ -3,7 +3,11 @@ package ticket.booking.entities;
 import java.sql.Time;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.ArrayList;
+import java.util.HashMap;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Train {
     private String trainID;
     private String trainNo;
@@ -20,7 +24,27 @@ public class Train {
     }
 
     public Train() {
+    }
 
+    // Copy constructor
+    public Train(Train other) {
+        this.trainID = other.trainID;
+        this.trainNo = other.trainNo;
+        // Deep copy of seats
+        if (other.seats != null) {
+            this.seats = new ArrayList<>();
+            for (List<Integer> row : other.seats) {
+                this.seats.add(new ArrayList<>(row));
+            }
+        }
+        // Deep copy of station times
+        if (other.stationTimes != null) {
+            this.stationTimes = new HashMap<>(other.stationTimes);
+        }
+        // Deep copy of stations
+        if (other.stations != null) {
+            this.stations = new ArrayList<>(other.stations);
+        }
     }
 
     // Getters and Setters
