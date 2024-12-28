@@ -8,10 +8,10 @@ public class Train {
     private String trainID;
     private String trainNo;
     private List<List<Integer>> seats;
-    private Map<String, Time> stationTimes;
+    private Map<String, String> stationTimes;
     private List<String> stations;
 
-    public Train(String trainID, String trainNo, List<List<Integer>> seats, Map<String, Time> stationTimes, List<String> stations) {
+    public Train(String trainID, String trainNo, List<List<Integer>> seats, Map<String, String> stationTimes, List<String> stations) {
         this.trainID = trainID;
         this.trainNo = trainNo;
         this.seats = seats;
@@ -44,11 +44,11 @@ public class Train {
         this.seats = seats;
     }
 
-    public Map<String, Time> getStationTimes() {
+    public Map<String, String> getStationTimes() {
         return stationTimes;
     }
 
-    public void setStationTimes(Map<String, Time> stationTimes) {
+    public void setStationTimes(Map<String, String> stationTimes) {
         this.stationTimes = stationTimes;
     }
 
@@ -58,5 +58,8 @@ public class Train {
 
     public void setStations(List<String> stations) {
         this.stations = stations;
+    }
+    public String getTrainInfo(){
+        return String.format("Train ID: %s Train no: %s Seats: %s", trainID, trainNo, seats.size());
     }
 }

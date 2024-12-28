@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Ticket {
     private String ticketId;
-    private String customerId;
+    private String userID;
     private String customerName;
     private String source;
     private String destination;
@@ -13,9 +13,9 @@ public class Ticket {
     private Date dateOfTravel;
 
     // Constructor
-    public Ticket(String ticketId, String customerId, String customerName, String source, String destination, int price, Train train, Date dateOfTravel) {
+    public Ticket(String ticketId, String userID, String customerName, String source, String destination, int price, Train train, Date dateOfTravel) {
         this.ticketId = ticketId;
-        this.customerId = customerId;
+        this.userID = userID;
         this.customerName = customerName;
         this.source = source;
         this.destination = destination;
@@ -33,12 +33,12 @@ public class Ticket {
         this.ticketId = ticketId;
     }
 
-    public String getCustomerId() {
-        return customerId;
+    public String getUserID() {
+        return userID;
     }
 
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 
     public String getCustomerName() {
@@ -87,5 +87,9 @@ public class Ticket {
 
     public void setDateOfTravel(Date dateOfTravel) {
         this.dateOfTravel = dateOfTravel;
+    }
+
+    public String getTicketInfo() {
+        return String.format("Ticket ID: %s belongs to User %s from %s to %s on %s", ticketId, userID, source, destination, dateOfTravel);
     }
 }
