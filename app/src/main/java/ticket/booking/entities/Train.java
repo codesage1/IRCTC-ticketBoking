@@ -19,6 +19,10 @@ public class Train {
         this.stations = stations;
     }
 
+    public Train() {
+
+    }
+
     // Getters and Setters
     public String getTrainID() {
         return trainID;
@@ -59,6 +63,7 @@ public class Train {
     public void setStations(List<String> stations) {
         this.stations = stations;
     }
+
     public String getTrainInfo(){
         return String.format("Train ID: %s Train no: %s Seats: %s", trainID, trainNo, seats.size());
     }

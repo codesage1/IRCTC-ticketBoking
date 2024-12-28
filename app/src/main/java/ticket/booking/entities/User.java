@@ -1,5 +1,6 @@
 package ticket.booking.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
@@ -17,6 +18,14 @@ public class User {
         this.userid = userid;
     }
     public User(){}
+
+    public <E> User(String nameToSignUp, String passwordToSignUp, String hashedPassword, ArrayList<Ticket> ticketsBooked, String userId) {
+        this.name = nameToSignUp;
+        this.password = passwordToSignUp;
+        this.hashedPassword = hashedPassword;
+        this.ticketBooked = ticketsBooked;
+        this.userid = userId;
+    }
 
     // Getters and Setters
     public String getName() {
@@ -55,5 +64,9 @@ public class User {
         for (Ticket ticket : ticketBooked) {
             System.out.println(ticket.getTicketInfo());
         }
+    }
+
+    public void getUserDetails() {
+        System.out.println("Name: " + name + "\nUserid: " + userid );
     }
 }
